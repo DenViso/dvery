@@ -1,35 +1,72 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import { DorsMain } from "./sections/DorsMain";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="conteiner">
+      <header className="header">
+        <img src="/img/logo.jpg" alt="" />
+        <ul>
+          <li>
+            <a href="#">Каталог</a>
+          </li>
+          <li>
+            <a href="#">Послуги</a>
+          </li>
+          <li>
+            <a href="#">Гарантія</a>
+          </li>
+          <li>
+            <a href="#">Корисне</a>
+          </li>
+          <li>
+            <a href="#">Контакти</a>
+          </li>
+        </ul>
+        <div className="headerBut">
+          <button>Увійти</button>
+          <button>Зареєструватись</button>
+        </div>
+      </header>
+      <main className="main">
+        <aside className="aside">
+          <h2>Пошук</h2>
+          <form action="">
+            <input type="text" placeholder="Введіть назву товара" /> <br />
+            <label htmlFor="glass1">
+              Зі склом
+              <input name="glass" type="radio" />
+            </label>
+            <label htmlFor="glass2">
+              Без скла
+              <input name="glass" type="radio" />
+            </label>{" "}
+            <br />
+            <label htmlFor="">
+              Колір <br />
+              <input name="color" list="mater" />
+              <datalist id="mater">
+                <option value="Горіх" />
+                <option value="Венгі" />
+                <option value="Дуб" />
+                <option value="Махаон" />
+                <option value="Чорні" />
+              </datalist>
+            </label>{" "}
+            <br />
+            <button>Пошук</button>
+          </form>
+        </aside>
+      
+        <DorsMain/>
+        
+      </main>
+      <footer>
+        
+      </footer>
+    </div>
+  );
 }
 
-export default App
+export default App;
